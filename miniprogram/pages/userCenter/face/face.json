@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-switch": "@vant/weapp/switch",
+    "van-uploader": "@vant/weapp/uploader"
+  }
+}

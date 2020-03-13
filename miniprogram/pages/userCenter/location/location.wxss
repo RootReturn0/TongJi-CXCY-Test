@@ -1,0 +1,5 @@
+/* miniprogram/pages/userCenter/location/location.wxss */
+.van-picker {
+  position: fixed; /*or前面的是absolute就可以用*/  
+  bottom: 0; 
+}

@@ -1,0 +1,22 @@
+<van-row gutter="20">
+  <van-col>
+    <van-image round width="4.5rem" height="4.5rem" src="{{avatarUrl}}" /></van-col>
+  <van-col style="height:5rem;align:center">
+    <van-row>{{nickName}}</van-row>
+    <van-row style="font-size:12px">测试ID：</van-row>
+    <van-row style="font-size:10px">{{openid}}</van-row>
+  </van-col>
+</van-row>
+<!-- <van-cell-group>
+<van-cell title="配送信息" is-link link-type="navigateTo" url="userInfo/userInfo" />
+</van-cell-group> -->
+<van-cell-group>
+  <van-cell title="个人信息" is-link link-type="navigateTo" url="userInfo/userInfo" />
+  <van-cell title="人脸识别" is-link link-type="navigateTo" url="face/face"/>
+  <van-cell title="常用位置" icon="location-o" clickable bindtap="chooseLocation"/>
+</van-cell-group>
+
+<van-cell-group>
+<van-button wx:if="{{nickName}}" block type="primary" bindtap="scanQRCode">扫码取件</van-button> 
+<button wx:else style="width:100%" type="primary" size="default"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">登录></button> 
+</van-cell-group>

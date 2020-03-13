@@ -1,0 +1,30 @@
+<!--miniprogram/pages/deliver/deliver.wxml-->
+<view wx:key="item" wx:for="{{packages}}">
+<van-row style="text-align:center">{{index+1}}号包裹</van-row>
+<van-cell-group>
+  <van-cell title="收件人" label="{{item.name}}" />
+  <van-cell title="快递单号" label="{{item.number}}" />
+  <van-cell title="取件码" label="{{item.code}}" />
+  <van-cell wx:if="{{item.status==='已预约'}}" title="配送状态" label="{{item.status}}" value="详情" is-link link-type="navigateTo" url="/pages/deliverDetail/deliverDetail?index={{index}}" />
+  <van-cell wx:else title="配送状态" label="{{item.status}}" />
+</van-cell-group>
+<view wx:if="{{item.status==='未预约'}}">
+<van-button data-index="{{index}}" bindtap="onConfirm" type="primary" style="width: 100%;" >预约</van-button>
+</view>
+<view wx:else>
+<van-button data-index="{{index}}" bindtap="onCancel" type="danger" style="width: 100%;">取消</van-button>
+<!-- <van-button data-index="{{index}}" type="warning">修改</van-button> -->
+</view>
+
+</view>
+
+<van-popup show="{{choosing}}" position="bottom" bind:close="onCancel" :overlay="true">
+<van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  bind:cancel="onCancelTime"
+  bind:confirm="onChooseTime"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+/>
+</van-popup>

@@ -1,0 +1,37 @@
+<!--miniprogram/pages/userCenter/userInfo/userInfo.wxml-->
+<van-cell-group>
+  <van-field
+    label="姓名"
+    value="{{ name }}"
+    placeholder="请输入收件人姓名"
+    bind:change="changeName"
+  />
+  <van-field
+    label="手机"
+    value="{{ phone }}"
+    placeholder="请输入收件人手机号码"
+    bind:change="changePhone"
+  />
+  <!-- <van-field
+    value="{{ sms }}"
+    center
+    clearable
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+    border="{{ false }}"
+    use-button-slot
+  >
+    <van-button slot="button" round size="small" type="info">发送验证码</van-button>
+  </van-field> -->
+    <van-field
+    label="邮箱"
+    value="{{ email }}"
+    placeholder="请输入收件人邮箱（选填）"
+    bind:change="changeEmail"
+  />
+
+<van-dropdown-menu>
+  <van-dropdown-item  value="{{ campus }}" options="{{ campusList }}" />
+</van-dropdown-menu>
+</van-cell-group>
+<van-button type="primary" bindtap="saveInfo" block>保存信息</van-button>

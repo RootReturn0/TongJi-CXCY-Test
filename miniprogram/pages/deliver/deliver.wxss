@@ -1,0 +1,4 @@
+/* miniprogram/pages/deliver/deliver.wxss */
+.van-row {
+  margin-bottom: 1rem
+}

@@ -1,0 +1,4 @@
+/* miniprogram/pages/userCenter/userInfo/userInfo.wxss */
+.van-ceil-group {
+  margin: 0 1rem
+}

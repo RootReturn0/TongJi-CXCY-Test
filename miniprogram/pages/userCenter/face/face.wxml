@@ -1,0 +1,16 @@
+<!--miniprogram/pages/userCenter/face/face.wxml-->
+<van-cell-group>
+  <van-cell title="启用人脸识别">
+  <van-switch size="1.5rem" checked="{{ checked }}" bind:change="onChange" />
+  </van-cell>
+  <van-cell clickable title="上传图片" label="可多次上传，上传后覆盖" bindtap="doUpload">
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </van-cell>
+  <!-- <van-uploader
+  file-list="{{ fileList }}"
+  max-count="1"
+  bind:after-read="afterRead"
+/> -->
+</van-cell-group>

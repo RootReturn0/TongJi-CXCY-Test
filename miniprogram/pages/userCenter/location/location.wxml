@@ -1,0 +1,12 @@
+<!--miniprogram/pages/userCenter/location/location.wxml-->
+<van-cell title="使用当前位置" bindtap="chooseLocation" clickable/>
+<van-cell title="选择常用位置" bindtap="activePicker" clickable/>
+<van-popup show="{{second}}" position="bottom" bind:close="onCancel" :overlay="true">
+<van-picker
+  show-toolbar
+  title="宿舍地址"
+  columns="{{ dorms }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+</van-popup>

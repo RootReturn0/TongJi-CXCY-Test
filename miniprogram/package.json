@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.0.7",
+    "got": "^10.6.0",
+    "vant-weapp": "^0.5.27",
+    "wx-server-sdk": "^1.8.2"
+  }
+}
