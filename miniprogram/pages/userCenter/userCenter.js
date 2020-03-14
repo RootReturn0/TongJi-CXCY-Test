@@ -8,7 +8,7 @@ Page({
     location: {},
     userInfo: '',
   },
-  onLoad: function (){
+  onLoad: async function (){
     if (app.globalData.openid) {
       this.setData({
         openid: app.globalData.openid
@@ -35,8 +35,8 @@ Page({
       })
     }
     
-    this.authUserInfo();
-    this.authLocation();
+    await this.authUserInfo();
+    await this.authLocation();
   },
   onClick(event) {
     wx.showToast({
